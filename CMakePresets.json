@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "onpoint-release",
+      "displayName": "On Point Release",
+      "description": "Optimized native release build for packaging and testing.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INSTALL_PREFIX": "/usr",
+        "ONPOINT_PORTABLE_DEPLOY": "OFF",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "onpoint-release",
+      "displayName": "Build On Point Release",
+      "configurePreset": "onpoint-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "onpoint-packages",
+      "displayName": "Build On Point Packages",
+      "configurePreset": "onpoint-release",
+      "configuration": "Release",
+      "targets": ["package"]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.onpoint.OnPointPhotoEditor</id>
+  <name>On Point Photo Editor</name>
+  <summary>Precision photo correction and restoration</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>On Point Photo Editor is a Linux-first photo correction and restoration application focused on practical tone, color, detail, recovery, crop, resize, print and export tools.</p>
+    <p>It supports multithreaded CPU processing and optional OpenCL GPU acceleration with automatic CPU fallback.</p>
+  </description>
+  <launchable type="desktop-id">com.onpoint.OnPointPhotoEditor.desktop</launchable>
+  <provides>
+    <binary>OnPointPhotoEditor</binary>
+  </provides>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+  <developer id="com.onpoint">
+    <name>Gary Scott</name>
+  </developer>
+  <releases>
+    <release version="1.0.0-rc1" date="2026-07-30">
+      <description><p>First public release candidate.</p></description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

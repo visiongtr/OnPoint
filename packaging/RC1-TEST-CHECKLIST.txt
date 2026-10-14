@@ -1,0 +1,60 @@
+ON POINT PHOTO EDITOR 1.0 RC1 — CROSS-MACHINE TEST CHECKLIST
+============================================================
+
+TEST MACHINES
+-------------
+[ ] Primary Linux desktop
+[ ] Secondary desktop or laptop
+[ ] Clean Linux VM or fresh test account
+
+PORTABLE STARTUP
+----------------
+[ ] Extracted package runs without Qt installed on the machine
+[ ] Splash/System Optimizer appears on first launch
+[ ] Correct OS, kernel, desktop/session, Qt runtime, CPU, RAM, and GPU shown
+[ ] New profile ID created for this machine
+[ ] CPU worker count, tile size, and preview size look sensible
+[ ] OpenCL/GPU status is truthful
+[ ] NVIDIA system has nvidia-opencl-icd installed before GPU testing
+[ ] AMD/Mesa system has mesa-opencl-icd installed before GPU testing
+[ ] AMD/Mesa launch automatically selects Rusticl without shell variables
+[ ] CPU fallback remains enabled
+[ ] “Do not show at startup” survives relaunch
+[ ] Preferences > System Optimizer can turn the splash back on
+
+CORE EDITING
+------------
+Use the same reasonably large photo on every machine.
+
+[ ] Open and drag/drop
+[ ] Zoom, fit, and Show Original
+[ ] Crop / rotate / flip
+[ ] Brightness / Contrast / Gamma
+[ ] Saturation
+[ ] White Balance
+[ ] Hue/Tone and eyedropper
+[ ] Base HMS and Color HMS
+[ ] Red Eye
+[ ] Noise Reduction
+[ ] Focus / Sharpen — no color cast
+[ ] Overexposure Recovery — Finish applies cleanly
+[ ] Undo / Redo
+[ ] Save / Save As / Export JPG and PNG
+[ ] Print Preview opens
+[ ] Close with unsaved changes prompts correctly
+
+PERFORMANCE / STABILITY
+-----------------------
+[ ] Sliders remain responsive
+[ ] Full-resolution result appears correctly after release
+[ ] No seams, flicker, banding, wrong colors, or channel swapping
+[ ] No crash or freeze
+[ ] Fan and temperature behavior recorded
+[ ] Application output copied for the test record
+[ ] Program exits with code 0
+
+KNOWN POLISH NOTE
+-----------------
+Pressing Enter in the Save filename field currently may move the cursor instead
+of accepting the dialog. This is a known small V1 polish item and is not a
+packaging failure.

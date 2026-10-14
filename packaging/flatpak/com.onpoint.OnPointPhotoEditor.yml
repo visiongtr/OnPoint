@@ -1,0 +1,25 @@
+app-id: com.onpoint.OnPointPhotoEditor
+branch: stable
+runtime: org.kde.Platform
+runtime-version: '6.9'
+sdk: org.kde.Sdk
+command: OnPointPhotoEditor
+
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --socket=cups
+  - --device=dri
+  - --filesystem=home
+
+modules:
+  - name: onpoint-photo-editor
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DONPOINT_PORTABLE_DEPLOY=OFF
+    sources:
+      - type: dir
+        path: ../..

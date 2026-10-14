@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=On Point Photo Editor
+GenericName=Photo Editor
+Comment=Precision Photo Correction
+Exec=OnPointPhotoEditor %F
+Icon=com.onpoint.OnPointPhotoEditor
+Terminal=false
+Categories=Graphics;Photography;RasterGraphics;Qt;
+MimeType=image/jpeg;image/png;image/bmp;image/tiff;image/webp;
+StartupNotify=true
+StartupWMClass=OnPointPhotoEditor
+Keywords=photo;image;editor;correction;restoration;darkroom;

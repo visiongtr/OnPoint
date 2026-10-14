@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/styles">
+        <file alias="onpoint.qss">onpoint.qss</file>
+        <file alias="spin-up.png">spin-up.png</file>
+        <file alias="spin-down.png">spin-down.png</file>
+        <file alias="tab-left.png">tab-left.png</file>
+        <file alias="tab-right.png">tab-right.png</file>
+        <file alias="OnPoint1.png">icons/OnPoint1.png</file>
+        <file alias="OnPoint_Splash.png">images/OnPoint_Splash.png</file>
+    </qresource>
+</RCC>

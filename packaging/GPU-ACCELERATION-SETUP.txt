@@ -1,0 +1,51 @@
+ON POINT PHOTO EDITOR 1.0 — LINUX GPU ACCELERATION SETUP
+=========================================================
+
+On Point always includes a fast multicore CPU engine. GPU acceleration is
+optional and requires an OpenCL provider installed by the operating system.
+The portable On Point archive cannot legally or safely bundle vendor drivers.
+
+DEBIAN 13 / LMDE 7
+-------------------
+NVIDIA:
+
+    sudo apt update
+    sudo apt install nvidia-opencl-icd clinfo
+
+AMD Radeon using Mesa/Rusticl:
+
+    sudo apt update
+    sudo apt install mesa-opencl-icd clinfo
+
+Verify:
+
+    clinfo -l
+
+Expected examples:
+
+    Platform #0: NVIDIA CUDA
+     `-- Device #0: NVIDIA GeForce RTX ...
+
+    Platform #0: rusticl
+     `-- Device #0: AMD Radeon Graphics (radeonsi, ...)
+
+AMD / RUSTICL AUTO-SELECTION
+----------------------------
+Mesa ships both the modern Rusticl implementation and, on some systems, an
+older Mesa/Clover OpenCL provider. On Point 1.0 detects an AMD DRM device,
+enables Rusticl's radeonsi device automatically, and prefers the Rusticl
+platform. Every selected backend must still pass exact pixel and alpha
+self-tests before On Point permits it to process a photograph.
+
+FALLBACK
+--------
+If no OpenCL platform is installed, no compatible device is exposed, a kernel
+cannot compile, or a self-test returns incorrect data, On Point keeps the
+optimized multicore CPU backend active. No image is committed from a failed GPU
+self-test.
+
+OTHER DISTRIBUTIONS
+-------------------
+Install the distribution's OpenCL ICD/runtime package for the installed GPU.
+Package names differ. Confirm that `clinfo -l` lists a GPU before expecting On
+Point to use it.
